@@ -11,6 +11,8 @@ class Login extends React.Component {
             errorMessage: '',
             userList: []
         }
+        this.navigateUser = this.navigateUser.bind(this);
+        this.userSubmit = this.userSubmit.bind(this);
     }
     async componentDidMount() {
         try {
@@ -55,13 +57,17 @@ class Login extends React.Component {
         }
         if (hasCredential) {
             console.log('login success');
+            this.navigateUser();
+
         }
         else {
             console.log('user password doesnot match');
         }
 
     }
-
+    navigateUser = () => {
+        this.props.history.push('/userlist')
+    }
     render() {
         return (
             <div>

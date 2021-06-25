@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container'
 import Login from './Component/Login';
+import UserList from './Component/UserList'
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 
 
@@ -25,6 +26,7 @@ function App() {
           </nav>
           <Switch>
             <Route exact path="/" component={Login} />
+            <Route exact path="/userlist" component={UserList} />
 
           </Switch>
         </BrowserRouter>
